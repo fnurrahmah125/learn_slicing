@@ -8,7 +8,7 @@ fetch("./data.json")
         "beforeend",
         `<div class="summary__score">
             <div class="summary__score-left">
-                <img src="${data.icon}" />
+                <img src="${data.icon}" alt="icon" />
                 <span>${data.category}</span>
             </div>
             <div class="summary__score-right">${data.score}<span>/ 100</span></div>

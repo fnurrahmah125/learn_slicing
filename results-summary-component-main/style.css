@@ -42,11 +42,13 @@ body {
   margin: 0;
 }
 
+h1,
 h2 {
   font-size: var(--fs-500);
 }
 
 @media (min-width: 765px) {
+  h1,
   h2 {
     font-size: var(--fs-600);
   }
