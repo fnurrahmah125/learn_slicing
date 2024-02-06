@@ -5,6 +5,7 @@
   --fw-bold: 700;
   --fw-extra-bold: 800;
 
+  --fs-300: 1rem;
   --fs-400: 1.125rem;
   --fs-500: 1.25rem;
   --fs-600: 1.5rem;
@@ -128,6 +129,7 @@ h2 {
 .result__subtitle {
   font-weight: var(--fw-medium);
   font-size: var(--fs-600);
+  letter-spacing: 1px;
   margin-bottom: 0.75rem;
 }
 
@@ -229,6 +231,9 @@ h2 {
 .summary__btn {
   border: none;
   display: block;
+  width: 100%;
+  font-size: var(--fs-300);
+  letter-spacing: 1px;
   color: var(--clr-neutral-100);
   background: var(--clr-neutral-900);
   padding: 1rem;
