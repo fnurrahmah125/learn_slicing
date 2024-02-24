@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Device Look</title>
+  </head>
+  <body>
+    <div class="container-mobile">
+      <div class="mobile-info">
+        <p>Sorry 🙁</p>
+        <p>The device look is only available in desktop view</p>
+      </div>
+    </div>
+    <div class="container-desktop">
+      <nav>
+        <ul>
+          <li>
+            <a
+              type="button"
+              class="nav-link nav-active"
+              href="javascript:void(0)"
+              >Mobile</a
+            >
+          </li>
+          <li>
+            <a type="button" class="nav-link" href="javascript:void(0)"
+              >Tablet</a
+            >
+          </li>
+          <li>
+            <a type="button" class="nav-link" href="javascript:void(0)"
+              >Laptop</a
+            >
+          </li>
+          <li>
+            <a target="_blank" class="nav-open" href="">Open in New Tab</a>
+          </li>
+        </ul>
+      </nav>
+      <aside>
+        <h1>🖥 Projects Name</h1>
+        <a
+          href="javascript:void(0)"
+          class="aside-link aside-active"
+          data-target="four-card-feature-section-master/index.html"
+          >Frontend Mentor - Four card feature section</a
+        >
+        <a
+          href="javascript:void(0)"
+          class="aside-link"
+          data-target="results-summary-component-main/index.html"
+          >Frontend Mentor - Results summary component</a
+        >
+      </aside>
+      <main>
+        <div id="device" class="mobile">
+          <div class="content">
+            <iframe
+              src="../four-card-feature-section-master/index.html"
+              frameborder="0"
+              style="width: 100%; border: none; height: 100%"
+            ></iframe>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // navbar
+      const navLink = document.querySelectorAll(".nav-link");
+
+      for (let i = 0; i < navLink.length; i++) {
+        navLink[i].addEventListener("click", function () {
+          const current = document.getElementsByClassName("nav-active");
+
+          if (current.length > 0) {
+            current[0].className = current[0].className.replace(
+              " nav-active",
+              ""
+            );
+          }
+          this.className += " nav-active";
+
+          const currentText = navLink[i].textContent.toLocaleLowerCase();
+          const currentEl = document.getElementById("device");
+          currentEl.className = "";
+          currentEl.className += `${currentText}`;
+        });
+      }
+
+      // aside
+      const asideLink = document.querySelectorAll(".aside-link");
+
+      for (let i = 0; i < asideLink.length; i++) {
+        asideLink[i].addEventListener("click", function () {
+          const current = document.getElementsByClassName("aside-active");
+
+          if (current.length > 0) {
+            current[0].className = current[0].className.replace(
+              " aside-active",
+              ""
+            );
+          }
+          this.className += " aside-active";
+
+          const data = this.dataset.target;
+          const iframe = document.querySelector("iframe");
+
+          iframe.src = `../${data}`;
+        });
+      }
+
+      // open in new tab
+      const openInNewTab = document.querySelector(".nav-open");
+      const iframe = document.querySelector("iframe");
+
+      openInNewTab.addEventListener("click", function () {
+        this.href = iframe.src;
+      });
+    </script>
+  </body>
+</html>
